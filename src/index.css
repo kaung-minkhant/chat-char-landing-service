@@ -1,0 +1,124 @@
+@import "./fonts.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: black;
+}
+
+body {
+  background-color: #fff;
+}
+
+.noise {
+  background-image: repeating-radial-gradient(
+    circle at 17% 32%,
+    #222222,
+    #111111 0.00085px
+  );
+  animation: back 5s linear infinite;
+}
+
+@keyframes back {
+  from {
+    background-size: 100% 100%;
+  }
+  to {
+    background-size: 200% 200%;
+  }
+}
+
+.glass {
+  position: relative;
+  border-radius: var(--border-radius);
+  z-index: 0;
+}
+.glass::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  border-radius: var(--border-radius);
+  padding: var(--border-width);
+  background: linear-gradient(180deg, #fff, #171717);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.footer {
+  background: linear-gradient(
+    0deg,
+    rgba(8, 0, 17, 1) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background-clip: text;
+  -webkit-background-clip: text;
+  background: linear-gradient(
+    0deg,
+    rgba(8, 0, 17, 1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  ); */
+}
+
+.app-padding {
+  @apply px-app-xm sm:px-app-md lg:px-app-lg xl:px-app-xl 2xl:px-app-2xl;
+}
+.stars {
+  background: black
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    opacity: .4;
+  display: block;
+}
+.twinkling {
+  width: 10000px;
+  background: transparent
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png")
+    repeat;
+  background-size: 1000px 1000px;
+  z-index: 1;
+
+  -moz-animation: move-background 20s linear infinite;
+  -ms-animation: move-background 20s linear infinite;
+  -o-animation: move-background 20s linear infinite;
+  -webkit-animation: move-background 20s linear infinite;
+  animation: move-background 20s linear infinite;
+}
+@keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+
+@-moz-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}

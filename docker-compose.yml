@@ -1,0 +1,15 @@
+version: "3.8"
+networks:
+  proxiable:
+    name: proxy-manager-service_default
+    external: true
+services:
+  chatchar-landing-service:
+    image: polarkaung1999/chatchar-landing-service:latest
+    build:
+      context: .
+      target: production
+    expose:
+      - 8080
+    networks:
+      - proxiable

@@ -1,0 +1,14 @@
+.sticky-scroll-reveal {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.sticky-reveal-shadow {
+  box-shadow: 0px 0px 92px 0px #7f00ff33;
+}
+
+.sticky-scroll-reveal::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'WaloneBold';
+  src: url("/Z06-WaloneBold.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'WaloneRegular';
+  src: url("/Z06-WaloneRegular.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'inter-medium';
+  src: url("/Inter-Medium.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'inter-bold';
+  src: url("/Inter-Bold.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'inter-regular';
+  src: url("/Inter-Regular.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'inter-semibold';
+  src: url("/Inter-SemiBold.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'grafik-bold';
+  src: url("/GraphikBold.otf") format("opentype");
+}
+@font-face {
+  font-family: 'grafik-medium';
+  src: url("/GraphikMedium.otf") format("opentype");
+}
