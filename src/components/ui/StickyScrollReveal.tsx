@@ -13,6 +13,8 @@ export const StickyScrollReveal = ({
     title: string;
     description: string;
     content?: React.ReactNode | any;
+    bg?: string;
+    img?: string;
   }[];
   contentClassName?: string;
 }) => {
@@ -53,9 +55,11 @@ export const StickyScrollReveal = ({
   ];
 
   const [_, setBackgroundGradient] = useState(linearGradients[0]);
+  const [activeImg, setActiveImg] = useState(content[0].img)
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
+    setActiveImg(content[activeCard % content.length].img)
   }, [activeCard]);
 
   return (
@@ -114,7 +118,7 @@ export const StickyScrollReveal = ({
         <div
           // style={{ background: backgroundGradient }}
           className={tw(
-            "rounded-md bg-transparent flex-1 ml-auto flex",
+            "rounded-md bg-transparent flex-1 ml-auto flex relative  overflow-hidden",
             contentClassName
           )}
         >
@@ -124,6 +128,7 @@ export const StickyScrollReveal = ({
             sizes="(min-width: 1280px) 426px, (min-width: 1024px) 300px, (min-width: 768px) 307px, (min-width: 640px) 256px, 200px"
             className="object-contain m-auto"
           />
+          <img className="absolute left-[50%] -translate-x-[50%]  object-contain w-[220px] mmd:w-[280px] lg:w-[270px] top-[1.5rem] lg:top-[1.8rem] xl:top-5 xl:w-[390px] rounded-[1.8rem] lg:rounded-3xl xl:rounded-4xl" src={activeImg}/>
           {/* {content[activeCard].content ?? null} */}
         </div>
       </div>

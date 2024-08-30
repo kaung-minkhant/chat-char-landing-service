@@ -7,7 +7,6 @@ interface TMobileCardProps {
   bg: string;
 }
 function MobileCard({ title, description, img, bg }: TMobileCardProps) {
-  console.log("img", img);
   return (
     <div className="w-full flex flex-col gap-5 items-center">
       <div
@@ -19,7 +18,7 @@ function MobileCard({ title, description, img, bg }: TMobileCardProps) {
           backgroundSize: "cover",
         }}
       >
-        <img src={img} className="w-[70%] object-contain" />
+        <img src={img} className="w-[70%] object-contain rounded-2xl" />
       </div>
       <div className="mt-4 flex flex-col gap-3">
         <Typography
